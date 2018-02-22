@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/chessboard.png</file>
+        <file>images/logo.png</file>
+        <file>images/baiqi.tga</file>
+        <file>images/begin.png</file>
+        <file>images/exit.png</file>
+        <file>images/goback.png</file>
+        <file>images/heiqi.tga</file>
+        <file>images/regret.png</file>
+        <file>images/stop.png</file>
+        <file>sounds/clock.wav</file>
+        <file>sounds/loop.wav</file>
+        <file>sounds/lose.wav</file>
+        <file>sounds/start.wav</file>
+        <file>sounds/win.wav</file>
+        <file>images/youwin.png</file>
+        <file>images/youlose.jpg</file>
+        <file>images/draw.png</file>
+    </qresource>
+</RCC>
