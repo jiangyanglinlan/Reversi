@@ -361,7 +361,8 @@ void Widget::AiPlay()
 {
     this->mTimer.stop();
 
-    int max = 0;
+    int max = -100;
+    int eat_max = 0;
     int x, y;
 
     if(JudgeRule(0, 0, Reversi, White, true) > 0)
@@ -419,15 +420,36 @@ void Widget::AiPlay()
         {
             if(JudgeRule(i, j, Reversi, White, false))
             {
-                if(JudgeRule(i, j, Reversi, White, false) > max)
+                if(xy_value[i][j] > max)
                 {
-                    max = JudgeRule(i, j, Reversi, White, false);
                     x = i;
                     y = j;
+                    max = xy_value[i][j];
+                    eat_max = JudgeRule(i, j, Reversi, White, false);
                 }
             }
         }
     }
+
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 8; j++)
+        {
+            if(JudgeRule(i, j, Reversi, White, false))
+            {
+                if(xy_value[i][j] == max)
+                {
+                    if(JudgeRule(i, j, Reversi, White, false) > eat_max)
+                    {
+                        x = i;
+                        y = j;
+                        eat_max = JudgeRule(i, j, Reversi, White, false);
+                    }
+                }
+            }
+        }
+    }
+
 
     //不能下子了
     if(max == 0)
